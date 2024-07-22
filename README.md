@@ -20,20 +20,16 @@ I have also included a python file which runs standalone without the SQL connect
 
 ### MySQL Setup
 1. *Start MySQL server* and log in as root(User defined):
-    ```sh
+    sh
     mysql -u root -p
     
 
 2. *Create the database and tables:*
-    ```sql
+    sql
     CREATE DATABASE EmployeePerformanceDB;
-    ```
-    
-    ```sql
+
     USE EmployeePerformanceDB;
-    ```
-    
-    ```sql
+
     CREATE TABLE Employees (
         employee_id INT PRIMARY KEY,
         name VARCHAR(100) NOT NULL,
@@ -41,8 +37,7 @@ I have also included a python file which runs standalone without the SQL connect
         designation VARCHAR(50) NOT NULL,
         performance_score INT NOT NULL
     );
-    ```
-    ```sql
+
     CREATE TABLE PerformanceReviews (
         review_id INT PRIMARY KEY AUTO_INCREMENT,
         employee_id INT,
@@ -50,11 +45,10 @@ I have also included a python file which runs standalone without the SQL connect
         review_comments TEXT,
         FOREIGN KEY (employee_id) REFERENCES Employees(employee_id)
     );
-    ```
     
 
-4. *Insert sample data to test queries:(This can also be done in python)*
-    ```sql
+3. *Insert sample data to test queries:(This can also be done in python)*
+    sql
     INSERT INTO Employees (employee_id, name, department, designation, performance_score)
     VALUES 
     (1, 'Aarif M', 'Sales', 'Manager', 90),
@@ -67,8 +61,7 @@ I have also included a python file which runs standalone without the SQL connect
     (8, 'Jeevan R', 'Sales', 'Representative', 91),
     (9, 'Ashraf M', 'IT', 'Manager', 84),
     (10, 'Sathya P', 'HR', 'Executive', 75);
-    ```
-    ```sql
+
     INSERT INTO PerformanceReviews (review_id, employee_id, review_date, review_comments)
     VALUES 
     (1, 1, '2024-01-01', 'Excellent performance'),
@@ -91,25 +84,23 @@ I have also included a python file which runs standalone without the SQL connect
     (18, 8, '2024-10-10', 'Consistent performance'),
     (19, 8, '2024-10-15', 'Good performance'),
     (20, 8, '2024-10-20', 'Satisfactory performance');
-    ```
+    
 
 ### Python Setup
 
 1. *Install the required Python packages:*
-    ```sh
+    sh
     pip install mysql-connector-python
     pip install pandas
-    ```
     
 2. *Change host,database,root,pass*
-   - Go to the `configs.py` file and change the value of the `GLOBAL_VARIABLES` present in the file according.
+   - Go to the configs.py file and change the value of the GLOBAL_VARIABLES present in the file according.
    - Example Usage :
-     ```sh
+      sh
      HOST = "localhost"
      DATABASE = "EmployeePerformanceDB"
      USER = "root"
      PASSWORD = "root"
-     ```
      
 
 
@@ -117,8 +108,7 @@ I have also included a python file which runs standalone without the SQL connect
 
 To run the console application:
 
-```sh
+sh
 python Main.py
-```
 
 And follow the steps according.
