@@ -8,7 +8,6 @@
     ```sql
     CREATE DATABASE EmployeePerformanceDB;
     ```
-    
     ```sql
     USE EmployeePerformanceDB;
     ```
